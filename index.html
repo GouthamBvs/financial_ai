@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SmartPay AI</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ===========================
+HEADER
+=========================== -->
+
+<header class="top-header">
+
+<div class="user-info">
+
+<h3>
+
+Good Evening 👋
+
+</h3>
+
+<p>
+
+Welcome back,
+<strong>Gowtham</strong>
+
+</p>
+
+</div>
+
+<div class="profile">
+
+GB
+
+</div>
+
+</header>
+
+
+
+<!-- ===========================
+MAIN BALANCE CARD
+=========================== -->
+
+<section class="balance-card">
+
+<div class="balance-top">
+
+<div>
+
+<p>
+
+Total Balance
+
+</p>
+
+<h1 id="totalBalance">
+
+₹1,502
+
+</h1>
+
+</div>
+
+<button
+id="editReserve"
+class="edit-btn">
+
+<i class="ri-edit-line"></i>
+
+Edit Goal
+
+</button>
+
+</div>
+
+
+
+<div class="balance-grid">
+
+<div class="mini-card">
+
+<p>
+
+Reserved
+
+</p>
+
+<h2 id="reservedAmount">
+
+₹500
+
+</h2>
+
+</div>
+
+<div class="mini-card">
+
+<p>
+
+Safe Spend
+
+</p>
+
+<h2 id="safeSpend">
+
+₹1002
+
+</h2>
+
+</div>
+
+<div class="mini-card">
+
+<p>
+
+Financial Health
+
+</p>
+
+<h2 id="healthScore">
+
+94%
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+AI CARD
+=========================== -->
+
+<section class="ai-card">
+
+<div class="robot">
+
+<i class="ri-robot-2-fill"></i>
+
+</div>
+
+<div>
+
+<h2>
+
+SmartPay AI
+
+</h2>
+
+<p id="aiMessage">
+
+You can safely spend
+
+₹1002 today without
+
+affecting your monthly
+
+saving goal.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+QUICK ACTIONS
+=========================== -->
+
+<h2 class="title">
+
+Quick Actions
+
+</h2>
+
+<div class="quick-grid">
+
+<button
+class="quick-card"
+onclick="location.href='payment.html'">
+
+<i class="ri-bank-card-fill"></i>
+
+<span>
+
+Pay
+
+</span>
+
+</button>
+
+<button
+class="quick-card"
+id="investBtn">
+
+<i class="ri-line-chart-fill"></i>
+
+<span>
+
+Invest
+
+</span>
+
+</button>
+
+<button
+class="quick-card"
+id="savingBtn">
+
+<i class="ri-safe-2-fill"></i>
+
+<span>
+
+Savings
+
+</span>
+
+</button>
+
+<button
+class="quick-card"
+id="loanBtn">
+
+<i class="ri-home-gear-fill"></i>
+
+<span>
+
+Loans
+
+</span>
+
+</button>
+
+</div>
+
+
+
+<!-- ===========================
+LINKED ACCOUNTS
+=========================== -->
+
+<div class="section-header">
+
+<h2>
+
+Linked Accounts
+
+</h2>
+
+<span>
+
+3 Banks
+
+</span>
+
+</div>
+
+<div class="bank-list">
+<!-- ===========================
+HDFC BANK
+=========================== -->
+
+<div class="bank-card">
+
+<div class="bank-left">
+
+<div class="bank-logo hdfc">
+
+H
+
+</div>
+
+<div>
+
+<h3>
+
+HDFC Bank
+
+</h3>
+
+<p>
+
+Savings Account
+
+</p>
+
+</div>
+
+</div>
+
+<div class="bank-right">
+
+<h2 id="hdfcBalance">
+
+₹500
+
+</h2>
+
+<small>
+
+Available Balance
+
+</small>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+SBI BANK
+=========================== -->
+
+<div class="bank-card">
+
+<div class="bank-left">
+
+<div class="bank-logo sbi">
+
+S
+
+</div>
+
+<div>
+
+<h3>
+
+State Bank of India
+
+</h3>
+
+<p>
+
+Savings Account
+
+</p>
+
+</div>
+
+</div>
+
+<div class="bank-right">
+
+<h2 id="sbiBalance">
+
+₹500
+
+</h2>
+
+<small>
+
+Available Balance
+
+</small>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+ICICI BANK
+=========================== -->
+
+<div class="bank-card">
+
+<div class="bank-left">
+
+<div class="bank-logo icici">
+
+I
+
+</div>
+
+<div>
+
+<h3>
+
+ICICI Bank
+
+</h3>
+
+<p>
+
+Savings Account
+
+</p>
+
+</div>
+
+</div>
+
+<div class="bank-right">
+
+<h2 id="iciciBalance">
+
+₹502
+
+</h2>
+
+<small>
+
+Available Balance
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+AI INVESTMENT
+=========================== -->
+
+<div class="section-header">
+
+<h2>
+
+Investment Recommendation
+
+</h2>
+
+</div>
+
+<section class="investment-card">
+
+<div class="invest-icon">
+
+<i class="ri-line-chart-fill"></i>
+
+</div>
+
+<div class="invest-info">
+
+<h3>
+
+Smart AI Suggestion
+
+</h3>
+
+<p id="investmentMessage">
+
+Based on your reserve amount,
+
+you can safely purchase
+
+1 Tata Power share today.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+ACTIVE LOANS
+=========================== -->
+
+<div class="section-header">
+
+<h2>
+
+Active Loans
+
+</h2>
+
+</div>
+
+
+
+<div class="loan-card">
+
+<div class="loan-left">
+
+<i class="ri-home-4-fill"></i>
+
+<div>
+
+<h3>
+
+Home Loan
+
+</h3>
+
+<p>
+
+HDFC Bank
+
+</p>
+
+</div>
+
+</div>
+
+<div class="loan-right">
+
+<p>
+
+Due
+
+25 June
+
+</p>
+
+<div class="progress">
+
+<div
+id="homeLoanProgress"
+class="progress-fill green">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="loan-card">
+
+<div class="loan-left">
+
+<i class="ri-car-fill"></i>
+
+<div>
+
+<h3>
+
+Car Loan
+
+</h3>
+
+<p>
+
+ICICI Bank
+
+</p>
+
+</div>
+
+</div>
+
+<div class="loan-right">
+
+<p>
+
+Due
+
+18 June
+
+</p>
+
+<div class="progress">
+
+<div
+id="carLoanProgress"
+class="progress-fill orange">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="loan-card">
+
+<div class="loan-left">
+
+<i class="ri-bank-card-fill"></i>
+
+<div>
+
+<h3>
+
+Personal Loan
+
+</h3>
+
+<p>
+
+SBI
+
+</p>
+
+</div>
+
+</div>
+
+<div class="loan-right">
+
+<p>
+
+Due
+
+Tomorrow
+
+</p>
+
+<div class="progress">
+
+<div
+id="personalLoanProgress"
+class="progress-fill red">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+CREDIT CARD
+=========================== -->
+
+<div class="section-header">
+
+<h2>
+
+Credit Cards
+
+</h2>
+
+</div>
+
+
+
+<div class="credit-card">
+
+<div>
+
+<h3>
+
+HDFC Credit Card
+
+</h3>
+
+<p>
+
+Payment Due
+
+20 June
+
+</p>
+
+</div>
+
+<div>
+
+<span
+class="status yellow">
+
+8 Days Left
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="credit-card">
+
+<div>
+
+<h3>
+
+ICICI Amazon Card
+
+</h3>
+
+<p>
+
+Payment Due
+
+Tomorrow
+
+</p>
+
+</div>
+
+<div>
+
+<span
+class="status red">
+
+Critical
+
+</span>
+
+</div>
+
+</div>
+<!-- ===========================
+RECENT TRANSACTIONS
+=========================== -->
+
+<div class="section-header">
+
+<h2>
+
+Recent Transactions
+
+</h2>
+
+<a href="#">
+
+View All
+
+</a>
+
+</div>
+
+<div id="transactionContainer">
+
+<div class="transaction-card">
+
+<div class="transaction-left">
+
+<div class="transaction-icon">
+
+<i class="ri-shopping-bag-fill"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Amazon
+
+</h3>
+
+<p>
+
+Shopping
+
+</p>
+
+</div>
+
+</div>
+
+<div class="transaction-right">
+
+<h3>
+
+- ₹450
+
+</h3>
+
+<small>
+
+Today
+
+</small>
+
+</div>
+
+</div>
+
+<div class="transaction-card">
+
+<div class="transaction-left">
+
+<div class="transaction-icon">
+
+<i class="ri-restaurant-fill"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Restaurant
+
+</h3>
+
+<p>
+
+Food
+
+</p>
+
+</div>
+
+</div>
+
+<div class="transaction-right">
+
+<h3>
+
+- ₹180
+
+</h3>
+
+<small>
+
+Yesterday
+
+</small>
+
+</div>
+
+</div>
+
+<div class="transaction-card">
+
+<div class="transaction-left">
+
+<div class="transaction-icon">
+
+<i class="ri-smartphone-fill"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Jio Recharge
+
+</h3>
+
+<p>
+
+Mobile
+
+</p>
+
+</div>
+
+</div>
+
+<div class="transaction-right">
+
+<h3>
+
+- ₹299
+
+</h3>
+
+<small>
+
+Yesterday
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+AI CHAT BUTTON
+=========================== -->
+
+<button
+
+id="aiAssistant"
+
+class="floating-ai">
+
+<i class="ri-robot-2-fill"></i>
+
+</button>
+
+
+
+<!-- ===========================
+AI CHAT WINDOW
+=========================== -->
+
+<div
+
+id="aiChat"
+
+class="ai-chat">
+
+<div class="chat-header">
+
+<h3>
+
+🤖 SmartPay AI
+
+</h3>
+
+<button id="closeAI">
+
+<i class="ri-close-line"></i>
+
+</button>
+
+</div>
+
+<div
+id="chatBody"
+class="chat-body">
+
+<div class="ai-msg">
+
+Hello Gowtham 👋
+
+<br><br>
+
+You can ask me
+
+about
+
+Savings,
+
+Payments,
+
+Loans,
+
+Investment,
+
+Financial Health.
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+
+id="chatInput"
+
+type="text"
+
+placeholder="Ask SmartPay AI...">
+
+<button id="sendChat">
+
+<i class="ri-send-plane-fill"></i>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+EDIT SAVING GOAL
+=========================== -->
+
+<div
+
+id="goalPopup"
+
+class="popup">
+
+<div class="popup-content">
+
+<h2>
+
+Edit Saving Goal
+
+</h2>
+
+<p>
+
+Minimum recommended
+
+₹500
+
+</p>
+
+<input
+
+id="goalInput"
+
+type="number"
+
+placeholder="Enter Amount">
+
+<div class="popup-actions">
+
+<button
+
+id="cancelGoal">
+
+Cancel
+
+</button>
+
+<button
+
+id="saveGoal">
+
+Save
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+<div class="nav-item active">
+
+<i class="ri-home-5-fill"></i>
+
+<span>
+
+Home
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-bank-fill"></i>
+
+<span>
+
+Banks
+
+</span>
+
+</div>
+
+<div
+class="nav-item"
+
+onclick="location.href='payment.html'">
+
+<i class="ri-bank-card-fill"></i>
+
+<span>
+
+Pay
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-line-chart-fill"></i>
+
+<span>
+
+Invest
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-user-fill"></i>
+
+<span>
+
+Profile
+
+</span>
+
+</div>
+
+</nav>
+
+
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
