@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SmartPay AI - Payment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ===========================
+HEADER
+=========================== -->
+
+<header class="top-header">
+
+<button
+
+class="back-btn"
+
+onclick="location.href='index.html'">
+
+<i class="ri-arrow-left-line"></i>
+
+</button>
+
+<div>
+
+<h2>
+
+Pay Money
+
+</h2>
+
+<p>
+
+SmartPay AI Protected Payment
+
+</p>
+
+</div>
+
+</header>
+
+
+
+<!-- ===========================
+PAYMENT CARD
+=========================== -->
+
+<section class="payment-card">
+
+<div class="pay-logo">
+
+<i class="ri-bank-card-fill"></i>
+
+</div>
+
+<h2>
+
+Enter Payment Amount
+
+</h2>
+
+<p>
+
+SmartPay AI will verify your payment before sending.
+
+</p>
+
+<div class="amount-container">
+
+<span>
+
+₹
+
+</span>
+
+<input
+
+id="paymentAmount"
+
+type="number"
+
+placeholder="0"
+
+autocomplete="off">
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+BALANCE SUMMARY
+=========================== -->
+
+<section class="summary-grid">
+
+<div class="summary-box">
+
+<p>
+
+Total Balance
+
+</p>
+
+<h3 id="payTotal">
+
+₹1502
+
+</h3>
+
+</div>
+
+<div class="summary-box">
+
+<p>
+
+Reserved
+
+</p>
+
+<h3 id="payReserved">
+
+₹500
+
+</h3>
+
+</div>
+
+<div class="summary-box">
+
+<p>
+
+Safe Spend
+
+</p>
+
+<h3 id="paySafe">
+
+₹1002
+
+</h3>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+BANKS
+=========================== -->
+
+<h2 class="title">
+
+Choose Bank
+
+</h2>
+
+<div class="bank-selection">
+
+<div
+
+class="select-bank active-bank"
+
+data-bank="hdfc">
+
+<div>
+
+<h3>
+
+HDFC Bank
+
+</h3>
+
+<p>
+
+₹500 Available
+
+</p>
+
+</div>
+
+<i class="ri-check-fill"></i>
+
+</div>
+
+<div
+
+class="select-bank"
+
+data-bank="sbi">
+
+<div>
+
+<h3>
+
+SBI
+
+</h3>
+
+<p>
+
+₹500 Available
+
+</p>
+
+</div>
+
+</div>
+
+<div
+
+class="select-bank"
+
+data-bank="icici">
+
+<div>
+
+<h3>
+
+ICICI
+
+</h3>
+
+<p>
+
+₹502 Available
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+<!-- ===========================
+SMART AI RECOMMENDATION
+=========================== -->
+
+<section class="ai-payment-card">
+
+<div class="robot">
+
+<i class="ri-robot-2-fill"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+SmartPay AI
+
+</h3>
+
+<p id="paymentSuggestion">
+
+You can safely spend
+
+<b>₹1002</b>
+
+today without affecting
+
+your monthly savings goal.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+PAY BUTTON
+=========================== -->
+
+<button
+
+id="payButton"
+
+class="pay-btn">
+
+<i class="ri-bank-card-fill"></i>
+
+Pay Securely
+
+</button>
+
+
+
+<!-- ===========================
+AI ANALYSIS OVERLAY
+=========================== -->
+
+<div
+
+id="analysisOverlay"
+
+class="analysis-overlay">
+
+<div class="analysis-card">
+
+<div class="analysis-icon">
+
+🤖
+
+</div>
+
+<h2>
+
+SmartPay AI
+
+</h2>
+
+<p id="analysisStatus">
+
+Connecting to your linked banks...
+
+</p>
+
+<div class="progress-bar">
+
+<div id="progressFill">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+WARNING POPUP
+=========================== -->
+
+<div
+
+id="warningPopup"
+
+class="popup">
+
+<div class="popup-content">
+
+<div class="popup-icon">
+
+⚠️
+
+</div>
+
+<h2>
+
+AI Warning
+
+</h2>
+
+<p id="warningMessage">
+
+Payment may affect your reserved savings.
+
+</p>
+
+<div class="popup-actions">
+
+<button
+
+id="changeAmount">
+
+Change Amount
+
+</button>
+
+<button
+
+id="continuePayment">
+
+Continue Anyway
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+SUCCESS POPUP
+=========================== -->
+
+<div
+
+id="safePopup"
+
+class="popup">
+
+<div class="popup-content">
+
+<div class="popup-icon success">
+
+✅
+
+</div>
+
+<h2>
+
+Payment Approved
+
+</h2>
+
+<p id="safeMessage">
+
+SmartPay AI verified your payment.
+
+Your savings goal is protected.
+
+</p>
+
+<button
+
+id="payNow">
+
+Complete Payment
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+CHANGE AMOUNT POPUP
+=========================== -->
+
+<div
+
+id="changePopup"
+
+class="popup">
+
+<div class="popup-content">
+
+<h2>
+
+Suggested Payment
+
+</h2>
+
+<p>
+
+To protect your savings,
+
+SmartPay AI recommends
+
+reducing your payment.
+
+</p>
+
+<h1 id="suggestedAmount">
+
+₹650
+
+</h1>
+
+<div class="popup-actions">
+
+<button
+
+id="editPayment">
+
+Edit Amount
+
+</button>
+
+<button
+
+id="ignoreSuggestion">
+
+Ignore
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+<div
+
+class="nav-item"
+
+onclick="location.href='index.html'">
+
+<i class="ri-home-5-fill"></i>
+
+<span>
+
+Home
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-bank-fill"></i>
+
+<span>
+
+Banks
+
+</span>
+
+</div>
+
+<div class="nav-item active">
+
+<i class="ri-bank-card-fill"></i>
+
+<span>
+
+Pay
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-line-chart-fill"></i>
+
+<span>
+
+Invest
+
+</span>
+
+</div>
+
+<div class="nav-item">
+
+<i class="ri-user-fill"></i>
+
+<span>
+
+Profile
+
+</span>
+
+</div>
+
+</nav>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
